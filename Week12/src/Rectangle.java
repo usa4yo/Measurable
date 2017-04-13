@@ -10,20 +10,20 @@ public class Rectangle implements Measurable{
     
     public Rectangle(double newLength, double newWidth){
         this.setLength(newLength);
-        this.setLength(newWidth);
+        this.setWidth(newWidth);
     }
     
     /**
      * @return the length
      */
     public double getLength() {
-        return length;
+        return this.length;
     }
 
     /**
      * @param length the length to set
      */
-    public void setLength(double newLength) {
+    public boolean setLength(double newLength) {
         boolean returnValue = false;
         if(newLength > 0){
             this.length = newLength;
@@ -31,13 +31,14 @@ public class Rectangle implements Measurable{
         } else {
             this.length = Measurable.DEFAULT_SIDE;
         }
+        return returnValue;
     }
 
     /**
      * @return the width
      */
     public double getWidth() {
-        return width;
+        return this.width;
     }
 
     /**
